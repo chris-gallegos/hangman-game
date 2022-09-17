@@ -1,3 +1,13 @@
-* {
-    
+
+body {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+    margin-right: 150px;
+}
+
+#mistakes {
+    margin-right: 40px;
 }
