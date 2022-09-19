@@ -11,3 +11,7 @@ body {
 #mistakes {
     margin-right: 40px;
 }
+
+button {
+    margin: 3px
+}
