@@ -15,12 +15,12 @@ h2 {
 }
 
 .right {
-    text-align: right;
-    margin-right: 150px;
+    font-size: 30px;
 }
 
 #mistakes {
-    margin-right: 60px;
+    font-size: 25px;
+    font-weight: bold;
     margin-top: 3px;
 }
 
@@ -49,6 +49,8 @@ button {
     width: 400px;
     height: 400px;
     margin: 0%;
+    border: 10px solid rgb(254, 255, 238);
+    border-radius: 5px;
 }
 
 
