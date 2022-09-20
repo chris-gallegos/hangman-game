@@ -23,7 +23,8 @@ const LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 let word = ''
 let wordPicked = null
 let choice = []
-let mistakesHad = 8
+let mistakesHad = 7
+let getWrong = 0
 
 
 /*----- cached element references -----*/
@@ -31,11 +32,6 @@ let mistakesHad = 8
 const attemptDisplayEl = document.getElementById('mistakes')
 let lettersEl = document.getElementById('letters')
 const wordsEl = document.getElementById('guessword')
-
-
-/*----- event listeners -----*/
-
-// lettersEl.addEventListener('click', handleLetterClick)
 
 
 /*----- functions -----*/
@@ -57,7 +53,7 @@ function makeKeys() {
     lettersEl.innerHTML = buttonKeys;
   }
   
-// Function that generates the word from the aray of words available 
+// Function that generates the word from the array of words available 
 function getRandomWord() {
     word = WIN_WORDS[Math.floor(Math.random() * WIN_WORDS.length)]
 }
@@ -79,35 +75,49 @@ function getChoice(letterPicked) {
 
     if (word.indexOf(letterPicked) >= 0) {
         wordOnBoard()
+        userWon()
+    } else if (word.indexOf(letterPicked) === -1) {
+        mistakesHad--
+        updateGetWrong()
+        userLost()
     }
 }
 
 
+function userWon() {
+    if (wordPicked === word) {
+        lettersEl.innerHTML = 'Congratulations, you win! 🤗'  
+        reload()
+    }
+}
 
 
+function userLost() {
+    if (mistakesHad === getWrong) {
+        lettersEl.innerHTML = 'You Lost 😥'
+        reload()
+    }
+}
 
 
+function updateGetWrong() {
+    attemptDisplayEl.innerHTML = mistakesHad
+}
 
 //To display amount of wrong guesses made
-
 attemptDisplayEl.innerHTML = mistakesHad
 
+//Restart Game
+function reload() {
+    let btn = document.createElement('button')
+    btn.innerText = 'Click here to play again'
+    document.body.appendChild(btn)
+    btn.addEventListener('click', e => {
+        location.reload()
+    })
+}
 
-
-// function mistakesDislplay() {
-
-// }
-  
-
-
-
-
+//Game Start
 makeKeys()
 getRandomWord()
 wordOnBoard()
-
-
-
-
-//Game Start
-init()
