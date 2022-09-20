@@ -11,7 +11,7 @@ h1 {
 
 h2 {
     font-size: 30px;
-    margin-top: -20px;
+    margin-top: 20px;
 }
 
 .right {
@@ -25,20 +25,40 @@ h2 {
 }
 
 button {
-    margin: 1.5px;
+    margin: 1px;
     padding: 15px 20px;
     font-size: 20px;
     background-color: rgb(254, 255, 238)
 }
 
 #guessword {
+    margin-top: -35px;
     padding: 30px;
     font-size: 100px;
 }
 
 #letters {
     margin: 2px;
+    margin-top: -75px;
     padding: 15px 20px;
     font-size: 20px;
     font-weight: bold;
+}
+
+#pics {
+    width: 400px;
+    height: 400px;
+    margin: 0%;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 75px;
+}
+
+.footer {
+    padding: 50px;
 }
