@@ -1,7 +1,6 @@
-<strong>Browser Based Hangman Game</strong> <br>
+<h1>Browser Based Hangman Game</h1> 
 README is under construction. 
 
 
-
-https://user-images.githubusercontent.com/100250662/191393186-6e481c1c-4af5-4d0c-b6b8-61689426d31d.mov
+https://user-images.githubusercontent.com/100250662/191394150-a43b8d20-06d7-418c-9760-af820bbc1711.mov
 
