@@ -1,81 +1,6 @@
 /*----- constants -----*/
 //An array of strings contaning the possible winning combos. 
-const WIN_WORDS = ["mud","eigenvalue","holder","fording","refereeing",
-"fauna","innocence","shipwrecked","giftware","scrapers",
-"redoubling","defying","pamphleteer","whiskies","elves",
-"poets","sauerkraut","nurses","dispersing","started","spatter",
-"settlement","shell","woodworker","editors","herbs","liquorice",
-"penknife","bribers","bobby","recuring","criticised","pitiable","yuppie",
-"allocates","cellar","reactivation","blistering","unshockable","caterer",
-"irritatedly","cleaver","largeness","bedouins","declaim","sparsely","evangelicals",
-"contemplates","confessor","humiliate","buttering",
-"subsuming","chalet","depraving","scalable","thus","download",
-"envisage","longing","announcing","ram","streaks","fallible","positional",
-"gibbered","steadygoing","unbending","striated","thrown","teashop",
-"upended","spent","hall","worldclass","contains","lunging","wags",
-"impoverish","evangelical","drastic","sheepskins","swindles","reprove",
-"devotee","stirred","protozoa","facile","raffles","transducers","steeper",
-"cruxes","savaged","unfair","slimier","singleness","office","misreading",
-"teachings","harebell","paginating","skimp","tactile","crushers","wellread",
-"digress","tourniquet","squeaker","midge","anthropoid","abolitionist",
-"parachutes","olympia","sunny","acetic","stage","plush","pearls",
-"paintwork","disinfected","rings","selfportrait","dapple","cathartic",
-"pancreatic","plastered","stoning","clammed","specialist","devises",
-"final","overlook","demounting","novices","sables","misbegotten",
-"compression","endeared","skinniest","oestrogens","rye","beaks","created",
-"guffaws","backtracking","reconnoitre","nightcap","crust","deployment",
-"wellread","cinch","wilted","chides","stressful","clippings","copses",
-"scrapyards","outwitting","breeder","tinderbox","brunt","diminuendo",
-"bisected","captains","catalytic","followings","exclusively","retreating",
-"recombinant","obligated","dioptre","invasions","gorgeous","featureless",
-"advertises","bicycled","afflicted","progesterone","sandals","loaves",
-"uppermost","transfusing","sinkable","southernmost","exhilarated",
-"droves","navel","helots","rams","unlikely","engulfing","minuscule",
-"shimmers","milker","guerillas","summary","ray","specious","ranter",
-"celebratory","fraternities","downs","assuaging","transcending","amplified",
-"duffel","herding","narrator","madhouse","aplenty","tapestries","tweeds",
-"purgings","inspected","horseflesh","vexes","suffixed","refractors","assembly",
-"cherubs","basrelief","beagles","fighter","preaches","contemplated","beans",
-"sluicing","goblets","championing","grimaced","fervid","demolitions","emulsion",
-"exothermic","elevating","unnamed","mouthorgan","slope","outbreaks","deary",
-"commandments","brunches","scorpions","saucily","bystanders","destroyed",
-"leavened","facts","recursive","physiognomy","category","canteen","slot",
-"observation","defers","jackass","blubber","cite","lunchtimes","lend","invidious",
-"megavolt","armament","performs","construing","garotte","hocuspocus","grilles",
-"parities","arrogant","purer","indigestion","countess","cyphers","detracts",
-"minutest","ploughing","lockjaw","bandanna","vacated","series","airlift",
-"morally","chronometer","proved","wordplay","interns","exultantly",
-"invalidating","scrutinised","serf","dazzler","curs","prickles","hereby",
-"carted","readier","secretary","gasometer","accent","figure","boutique",
-"assents","axehead","biometry","oars","fertilising","unexciting","gentry",
-"minimum","pavements","speeding","essayists","trauma","anaphora",
-"symbolically","disturbs","tress","unhuman","delivery","scape","mushy",
-"subregional","autistic","humbles","reminders","saute","hangmen","kerned",
-"building","toppled","paradoxes","outspoken","acidrain","males","available",
-"guarantor","stopping","moisturising","hunts","quadrille","selfish","detracting",
-"creek","invigorating","facets","mobiles","beadles","stylishness","scots",
-"dictators","deklerk","unsuspecting","desirably","lengthwise","ruby","restartable",
-"lineouts","shareholder","prescribed","tolerant","toll","simile","plea","barked",
-"martians","exporting","resuming","deactivating","deterrence","dosages",
-"fuzziness","gratuitously","chloroformed","nincompoop","pistols","coralline",
-"dipstick","lazing","trilateral","decimate","delinquency","mitigate","circumcise",
-"positional","distempers","accommodated","zigzags","mantids","pessimism",
-"favouring","disappoints","stiffens","wrenched","monotony","soccer","megaparsec",
-"homunculus","acrimony","unwholesome","wrench","prescription","tiger","meets",
-"profuseness","coffers","wits","broadsides","designedly","vents","trivialises",
-"solicitors","gentleman","collapse","slander","souring","fornication","bigoted",
-"bosom","aunts","setters","vagabonds","infamous","ignominious","surmountable",
-"tarriest","guardsmen","bereave","hoardings","trepanned","accelerators",
-"interested","vaults","sedition","liferaft","inelegance","riddles","enchants","boosted",
-"reacting","scab","yonder","overused","portentously","undefiled","specifier","signaller",
-"guilty","philosophies","innately","unscientific","interaction","rhine","tundra",
-"serenade","licences","narcissism","chartered","tags","wellmade","canter",
-"armpit","sunspot","greasing","unattached","colonies","diminish","witticisms",
-"invidious","suitable","berths","erupted","conflates","teardrop","proposition",
-"lyra","examples","satisfiable","payphones","bowdlerising","famines","decamped",
-"dream","makings","rakes","installed","two","knocking","galley","stunning","printmakers",
-"equalling","barred","truss","whisper","inactivating","sailors","estuary","recounted","subgroup",
-"remarkable","function"]
+const WIN_WORDS = ['cat', 'mouse', 'dog', 'tiger', 'lion', 'cheese']
 
 //An array of strings contaning the alphabet for the keyboard. 
 const LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -166,9 +91,10 @@ attemptDisplayEl.innerHTML = mistakesHad
 
 //Restarts game and triggers when user clicks 'play again' button after winning or losing 
 function reload() {
+    let clickerDiv = document.getElementById('clicker') 
     let btn = document.createElement('button')
     btn.innerText = 'Click here to play again'
-    document.body.appendChild(btn)
+    clickerDiv.appendChild(btn) 
     btn.addEventListener('click', e => {
         location.reload()
     })
