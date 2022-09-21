@@ -9,51 +9,43 @@ const LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 
 
 /*----- app's (variables) -----*/
-let word = ''
-let wordPicked = null
-let choice = []
-let mistakesHad = 8
-let getWrong = 0
+let word = ''                // Holds word picked from words array 
+let wordPicked = null       //For word on the board
+let choice = []            //Array that holds letters picked buy user
+let mistakesHad = 8       //Number of guesses user gets to start the game 
+let getWrong = 0         //holds number of guesses that user gets wrong 
 
 /*----- cached element references -----*/
-const attemptDisplayEl = document.getElementById('mistakes')
-let lettersEl = document.getElementById('letters')
-const wordsEl = document.getElementById('guessword')
+const attemptDisplayEl = document.getElementById('mistakes')     //Wrong guess counter
+let lettersEl = document.getElementById('letters')              //Holds alphabet keyboard 
+const wordsEl = document.getElementById('guessword')           //Block were words are guessed 
 
 
 /*----- functions -----*/
 //Genterates buttons for letters to be selected "keyboard"
 function makeKeys() {
     let buttonKeys = LETTERS.map(key =>
-      `
-        <button
-          class="buttonA1"
-          id='` + key + `'
-          onClick="getChoice('` + key + `')"
-        >
-          ` + key + `
-        </button>
-      `).join('');
-  
+      `<button id='` + key + `' onClick="getChoice('` + key + `')"> ` + key + ` </button> `).join(''); 
+      //'key' is perameter, the argument is the array of strings representing the alphabet. This function maps over each letter to create a 'key' for keyboard 
     lettersEl.innerHTML = buttonKeys;
 }
   
-//Generates the word from the array of words available 
+//Randomly selects the word from the array of words available 
 function getRandomWord() {
     word = WIN_WORDS[Math.floor(Math.random() * WIN_WORDS.length)]
 }
 
-//Puts word generated on board
+//Puts word selected by getRandomWord() on board, gets called again on line 50 to update is user picked correctly 
 function wordOnBoard() {
-    wordPicked = word.split('').map(character => (choice.indexOf(character) >= 0 ? character : " _ ")).join('')
+    wordPicked = word.split('').map(character => (choice.indexOf(character) >= 0 ? character : " _ ")).join('') //choice is empty array declared 
     wordsEl.innerHTML = wordPicked
 }
 
-//Function that guesses word picked for user to guess
+//Evaluates the user's choice and whether it's a win or not 
 function getChoice(letterPicked) {
     choice.indexOf(letterPicked) === -1 ? choice.push(letterPicked) : null
-    document.getElementById(letterPicked).setAttribute('disabled', true)
-
+    document.getElementById(letterPicked).setAttribute('disabled', '')
+    
     if (word.indexOf(letterPicked) >= 0) {
         wordOnBoard()
         userWon()
@@ -103,10 +95,9 @@ function reload() {
 //updates the image for the hangman stick figure Just added
 function imageUpdate() {
     document.getElementById('pics').src = './Hangmanimages/image' + mistakesHad + '.jpg'
-    console.log(mistakesHad)
 }
 
-//Game Start, calling functions 
+//Calling functions
 makeKeys()
 getRandomWord()
 wordOnBoard()
