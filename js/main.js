@@ -106,8 +106,6 @@ function imageUpdate() {
     console.log(mistakesHad)
 }
 
-
-
 //Game Start, calling functions 
 makeKeys()
 getRandomWord()
