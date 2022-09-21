@@ -1,4 +1,4 @@
-# hangman-game
+<strong>Browser Based Hangman Game</strong> 
 README is under construction. 
 
 
