@@ -1,4 +1,3 @@
-
 body {
     background-color: rgb(153, 206, 236);
     text-align: center;
@@ -52,7 +51,6 @@ button {
     border: 10px solid rgb(254, 255, 238);
     border-radius: 5px;
 }
-
 
 .container {
     display: flex;
