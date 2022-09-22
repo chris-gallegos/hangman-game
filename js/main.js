@@ -9,7 +9,7 @@ const LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 
 
 /*----- app's (variables) -----*/
-let word = ''                // Holds word picked from words array 
+let word = ''                // Holds word picked from WIN_WORDS array 
 let wordPicked = null       //For word on the board
 let choice = []            //Array that holds letters picked buy user
 let mistakesHad = 8       //Number of guesses user gets to start the game 
