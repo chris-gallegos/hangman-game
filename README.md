@@ -10,3 +10,6 @@ The user is able to guess the hidden word by selecting any of the letters availa
 
 ## Technologies
 This application was created with HTML, CSS and Javascript. 
+
+
+## Play the Game <a href="https://chris-gallegos.github.io/hangman-game/" target="_blank">Here!</a>
